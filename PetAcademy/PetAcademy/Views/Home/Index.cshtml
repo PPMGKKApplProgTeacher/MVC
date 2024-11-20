@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="container">
+    <div class="row" style="display: flex">
+    @foreach (var item in ViewData["pets"] as IEnumerable<PetAcademy.Models.Pet>)
+    {
+        <div class="col" style="width: 33%">
+            <div class="card">
+                <img src="~/Images/@item.Image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">@item.Name</h2>
+                    <h3 class="card-title">@item.Species</h3>
+                    <h4 class="card-title">@item.Breed</h4>
+                    <p class="card-text">@item.History</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+</div>
